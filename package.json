@@ -32,5 +32,6 @@
   },
   "repository": {
     "url": "git@github.com:wolf-wolf/ftmap.git"
-  }
+  },
+  "keywords": ["directory tree", "directory structure tree", "tree"]
 }

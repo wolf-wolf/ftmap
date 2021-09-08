@@ -16,7 +16,7 @@ function parseArgumentsIntoOptions(rawArgs) {
         .describe('L', '文件目录结构的展示层级')
 
         .alias('I', 'pattern')
-        .describe('I', '需要排除的文件目录正在表达式，eg. "/node_modules|.git/"')
+        .describe('I', '需要排除的文件目录正则表达式（注意引号）\neg. "/node_modules|.git/"')
 
         .help('h')
         .alias('h', 'help')
