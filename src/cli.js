@@ -33,11 +33,9 @@ function parseArgumentsIntoOptions(rawArgs) {
 
 export async function cli(args) {
     let options = parseArgumentsIntoOptions(args);
-
-    options.targetDirectory = options.targetDirectory || process.cwd();
-
     console.log('%s', chalk.blue.bold('>> START 文件目录扫描....'));
-    const treeData = getFileTree(options.targetDirectory, options);
+
+    const treeData = getFileTree(options);
     console.log('%s', chalk.green.bold('>> DONE 文件目录扫描...'));
 
     if (options.output) {
@@ -50,3 +48,9 @@ export async function cli(args) {
 
     console.log('%s', chalk.green.bold('>> DONE 执行完成....'));
 }
+
+const ftmap = {
+    getFileTree
+};
+
+export default ftmap;

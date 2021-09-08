@@ -37,13 +37,14 @@ function _getIndent_(level, parentFlags) {
 
 /**
  * 默认配置
- * @typedef {{level: number, pattern?: string, tag: boolean}} BaseConfig
+ * @typedef {{level: number, pattern?: string, tag: boolean, targetDirectory: string}} BaseConfig
  * @type {BaseConfig}
  */
 const baseConfig = {
     pattern: '',        // 排除的文件
     level: Infinity,    // 输出的层级
-    tag: false          // 是否展示文件类型
+    tag: false,         // 是否展示文件类型
+    targetDirectory: process.cwd()
 };
 
 /**
@@ -89,16 +90,23 @@ function _traverseTree_(tree, curLevel, parentFlags, options) {
 
 /**
  * @description 生成文件结构文本
- * @param dir {string} 待生成文件结构的目录
  * @param [options] {BaseConfig} 配置项
  * @returns {string}
  */
-export default function getFileTree(dir, options = baseConfig) {
-    const {pattern} = options;
+export default function getFileTree(options = baseConfig) {
+    let {pattern, targetDirectory} = options;
 
-    let excludePattern = pattern ? new RegExp(pattern.substring(1, pattern.length - 2)) : undefined;
+    targetDirectory = targetDirectory || process.cwd();
 
-    let fileStructData = dirTree(dir, {
+    let excludePattern = '';  // 需要剔除的文件的正则表达式
+
+    if (Object.prototype.toString.call(pattern) === '[object String]') {
+        excludePattern = new RegExp(pattern.substring(1, pattern.length - 2))
+    } else if (Object.prototype.toString.call(pattern) === '[object RegExp]') {
+        excludePattern = pattern;
+    }
+
+    let fileStructData = dirTree(targetDirectory, {
         exclude: excludePattern,
     });
 

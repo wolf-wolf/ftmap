@@ -1,8 +1,8 @@
 {
   "name": "ftmap",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "tool like tree command",
-  "main": "index.js",
+  "main": "src/cli.js",
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "dev": "rollup -c -w",

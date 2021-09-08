@@ -50,3 +50,36 @@ npm install ftmap -g
 -h, --help     显示帮助信息
     --version  显示版本号
 ```
+
+## Document
+
+`getFileTree(options)`
+
+`options`默认值定义
+
+```javascript
+/**
+ * 默认配置
+ * @typedef {{level: number, pattern?: string, tag: boolean, targetDirectory: string}} BaseConfig
+ * @type {BaseConfig}
+ */
+const baseConfig = {
+    pattern: '',        // 排除的文件
+    level: Infinity,    // 输出的层级
+    tag: false,         // 是否展示文件类型
+    targetDirectory: process.cwd()
+};
+```
+
+使用示例
+
+```javascript
+import ftmap from 'ftmap';
+
+ftmap.getFileTree({
+    pattern: /node_modules|.git|.history/, // 排除的文件
+    level: 3, // 输出的层级
+    tag: true, // 是否展示文件类型
+    targetDirectory: path.resolve(__dirname, "../src"),
+});
+```
