@@ -1,4 +1,3 @@
-import arg from "arg";
 import getFileTree from './get-tree';
 import * as path from "path";
 import * as fs from "fs";
@@ -35,19 +34,19 @@ function parseArgumentsIntoOptions(rawArgs) {
 export async function cli(args) {
     let options = parseArgumentsIntoOptions(args);
 
-    // options.targetDirectory = options.targetDirectory || process.cwd();
-    //
-    // console.log('%s', chalk.blue.bold('>> START 文件目录扫描....'));
-    // const treeData = getFileTree(options.targetDirectory, options);
-    // console.log('%s', chalk.green.bold('>> DONE 文件目录扫描...'));
-    //
-    // if (options.output) {
-    //     console.log('%s', chalk.blue.bold(`>> START 文件写入....[${options.output}]`));
-    //     fs.writeFileSync(path.resolve(options.output), treeData);
-    //     console.log('%s', chalk.green.bold('>> DONE 文件写入....'));
-    // } else {
-    //     console.log(treeData);
-    // }
-    //
-    // console.log('%s', chalk.green.bold('>> DONE 执行完成....'));
+    options.targetDirectory = options.targetDirectory || process.cwd();
+
+    console.log('%s', chalk.blue.bold('>> START 文件目录扫描....'));
+    const treeData = getFileTree(options.targetDirectory, options);
+    console.log('%s', chalk.green.bold('>> DONE 文件目录扫描...'));
+
+    if (options.output) {
+        console.log('%s', chalk.blue.bold(`>> START 文件写入....[${options.output}]`));
+        fs.writeFileSync(path.resolve(options.output), treeData);
+        console.log('%s', chalk.green.bold('>> DONE 文件写入....'));
+    } else {
+        console.log(treeData);
+    }
+
+    console.log('%s', chalk.green.bold('>> DONE 执行完成....'));
 }

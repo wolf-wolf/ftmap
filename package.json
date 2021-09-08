@@ -4,19 +4,33 @@
   "description": "tool like tree command",
   "main": "index.js",
   "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "@hunter/f-tree": "bin/f-tree",
     "f-tree": "bin/f-tree"
   },
-  "author": "",
+  "author": "hunter",
   "license": "ISC",
   "dependencies": {
-    "arg": "^5.0.1",
     "chalk": "^4.1.2",
     "directory-tree": "^2.3.1",
     "esm": "^3.2.25",
-    "yargs": "^17.1.1"
+    "yargs": "^17.1.1",
+    "rollup": "^2.56.3",
+    "core-js": "^3.17.2",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/plugin-transform-runtime": "^7.15.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "repository": {
+    "url": "git@github.com:wolf-wolf/f-tree.git"
   }
 }
