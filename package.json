@@ -1,0 +1,21 @@
+{
+  "name": "f-tree",
+  "version": "1.0.0",
+  "description": "tool like tree command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "@hunter/f-tree": "bin/f-tree",
+    "f-tree": "bin/f-tree"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^5.0.1",
+    "chalk": "^4.1.2",
+    "directory-tree": "^2.3.1",
+    "esm": "^3.2.25"
+  }
+}
