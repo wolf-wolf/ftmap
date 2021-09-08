@@ -4,8 +4,8 @@ import {terser} from 'rollup-plugin-terser';
 export default {
     input: 'src/cli.js',
     output: {
-        name: 'f-tree',
-        file: './dist/f-tree.js',
+        name: 'ftmap',
+        file: './dist/ftmap.js',
         format: 'umd'
     },
     plugins: [

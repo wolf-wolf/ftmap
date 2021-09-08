@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
 require = require('esm')(module /*, options*/);
-require('../dist/f-tree').cli(process.argv);
+require('../dist/ftmap').cli(process.argv);

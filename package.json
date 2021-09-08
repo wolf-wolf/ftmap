@@ -1,5 +1,5 @@
 {
-  "name": "f-tree",
+  "name": "ftmap",
   "version": "1.0.0",
   "description": "tool like tree command",
   "main": "index.js",
@@ -9,8 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "@hunter/f-tree": "bin/f-tree",
-    "f-tree": "bin/f-tree"
+    "@hunter/ftmap": "bin/ftmap",
+    "ftmap": "bin/ftmap"
   },
   "author": "hunter",
   "license": "ISC",
@@ -31,6 +31,6 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "repository": {
-    "url": "git@github.com:wolf-wolf/f-tree.git"
+    "url": "git@github.com:wolf-wolf/ftmap.git"
   }
 }
