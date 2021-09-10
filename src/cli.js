@@ -15,6 +15,9 @@ function parseArgumentsIntoOptions(rawArgs) {
         .alias('L', 'level')
         .describe('L', '文件目录结构的展示层级')
 
+        .alias('N', 'nature')
+        .describe('N', '使用系统自然顺序，若不设置则默认显示为目录-文件的排序方式')
+
         .alias('I', 'pattern')
         .describe('I', '需要排除的文件目录正则表达式（注意引号）\neg. "/node_modules|.git/"')
 
@@ -28,6 +31,7 @@ function parseArgumentsIntoOptions(rawArgs) {
         pattern: argv['pattern'] || false,
         level: argv['level'] || false,
         output: argv['output'] || false,
+        nature: argv['nature'] || false,
     };
 }
 

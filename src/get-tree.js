@@ -62,11 +62,31 @@ function _traverseTree_(tree, curLevel, parentFlags, options) {
     let levelLimit = level || Infinity;
     let res = '';
 
-    for (let i = 0; i < tree.length; i++) {
+    // 文件名比较函数
+    function fileNameCompare(a, b) {
+        let avsName = a.name.toLowerCase();
+        let bvsName = b.name.toLowerCase();
+        if (a > b) {
+            return -1;
+        } else if (b > a) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    let sortTree = tree
+    if (!options.nature) {
+        let dirTree = tree.filter(item => item.type === 'directory').sort(fileNameCompare);
+        let fileTree = tree.filter(item => item.type === 'file').sort(fileNameCompare);
+        sortTree = dirTree.concat(fileTree);
+    }
+
+    for (let i = 0; i < sortTree.length; i++) {
         let parentFlagsBk = parentFlags;
-        let item = tree[i];
+        let item = sortTree[i];
         res += _getIndent_(curLevel, parentFlagsBk);
-        let isLast = i === tree.length - 1;
+        let isLast = i === sortTree.length - 1;
 
         if (isLast) {
             res += '└──';
@@ -80,6 +100,7 @@ function _traverseTree_(tree, curLevel, parentFlags, options) {
 
         res += `${tag ? tagTxt : ''}${item.name}\n`;
 
+        // child的循环
         if (item.children && curLevel + 1 < levelLimit) {
             res += _traverseTree_(item.children, curLevel + 1, parentFlagsBk, options);
         }
