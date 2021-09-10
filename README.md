@@ -43,12 +43,17 @@ npm install ftmap -g
 ## Options
 
 ```
--O, --output   内容输出地址，默认为控制台打印
--T, --tag      是否展示文件类型
--L, --level    文件目录结构的展示层级
--I, --pattern  需要排除的文件目录正则表达式，eg. "/node_modules|.git/"
--h, --help     显示帮助信息
-    --version  显示版本号
+Usage: ftmap [options]
+
+选项：
+      --version  显示版本号                                               [布尔]
+  -O, --output   内容输出地址，默认为控制台打印
+  -T, --tag      是否展示文件类型
+  -L, --level    文件目录结构的展示层级
+  -N, --nature   使用系统自然顺序，若不设置则默认显示为目录-文件的排序方式
+  -I, --pattern  需要排除的文件目录正则表达式（注意引号）
+                 eg. "/node_modules|.git/"
+  -h, --help     显示帮助信息                                             [布尔]
 ```
 
 ## Document
