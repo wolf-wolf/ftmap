@@ -14,30 +14,36 @@ npm install ftmap -g
 
 ```text
 ├──assets
-│   ├──imgs
-│   │   └──a.png
 │   ├──scripts
-│   │   └──common.js
 │   └──styles
-│       └──index.css
-└──src
-    ├──index.ts
-    └──utils.ts
+├──dist
+├──src
+│   ├──components
+│   ├──pages
+│   ├──plugins
+│   ├──services
+│   ├──index.tsx
+│   └──main.ts
+├──package-lock.json
+└──package.json
 ```
 
 2、标记文件夹和文件
 
 ```text
 ├──[D] assets
-│   ├──[D] imgs
-│   │   └──[F] a.png
 │   ├──[D] scripts
-│   │   └──[F] common.js
 │   └──[D] styles
-│       └──[F] index.css
-└──[D] src
-    ├──[F] index.ts
-    └──[F] utils.ts
+├──[D] dist
+├──[D] src
+│   ├──[D] components
+│   ├──[D] pages
+│   ├──[D] plugins
+│   ├──[D] services
+│   ├──[F] index.tsx
+│   └──[F] main.ts
+├──[F] package-lock.json
+└──[F] package.json
 ```
 
 ## Options
