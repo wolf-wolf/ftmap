@@ -1,6 +1,6 @@
 {
   "name": "ftmap",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "tool like tree command",
   "main": "src/cli.js",
   "scripts": {
@@ -15,15 +15,15 @@
   "author": "hunter",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.2",
-    "directory-tree": "^2.3.1",
-    "esm": "^3.2.25",
-    "yargs": "^17.1.1",
-    "rollup": "^2.56.3",
-    "core-js": "^3.17.2",
     "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.4",
-    "@babel/plugin-transform-runtime": "^7.15.0"
+    "chalk": "^4.1.2",
+    "core-js": "^3.17.2",
+    "directory-tree": "^2.4.0",
+    "esm": "^3.2.25",
+    "rollup": "^2.56.3",
+    "yargs": "^17.1.1"
   },
   "devDependencies": {
     "rollup-plugin-babel": "^4.4.0",
@@ -33,5 +33,9 @@
   "repository": {
     "url": "git@github.com:wolf-wolf/ftmap.git"
   },
-  "keywords": ["directory tree", "directory structure tree", "tree"]
+  "keywords": [
+    "directory tree",
+    "directory structure tree",
+    "tree"
+  ]
 }

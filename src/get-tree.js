@@ -129,6 +129,7 @@ export default function getFileTree(options = baseConfig) {
 
     let fileStructData = dirTree(targetDirectory, {
         exclude: excludePattern,
+        attributes: ['type']
     });
 
     let treeList = fileStructData.children;
