@@ -2,8 +2,6 @@
 
 基于 [directory-tree](https://www.npmjs.com/package/directory-tree) ,生成文件目录的树形结构展示
 
-[4 Document](#4Document)
-
 ## install
 
 ```shell
@@ -96,7 +94,7 @@ Usage: ftmap [options]
   -h, --help     显示帮助信息                                             [布尔]
 ```
 
-## 4 Document
+## Document
 
 `getFileTree(options)`
 
