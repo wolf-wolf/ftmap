@@ -1,6 +1,6 @@
 {
   "name": "ftmap",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "tool like tree command",
   "main": "dist/ftmap.js",
   "scripts": {

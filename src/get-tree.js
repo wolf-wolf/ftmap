@@ -37,14 +37,17 @@ function _getIndent_(level, parentFlags) {
 
 /**
  * 默认配置
- * @typedef {{level: number, pattern?: string, tag: boolean, targetDirectory: string}} BaseConfig
+ * @typedef {{output: null, level: number, nature: boolean, targetDirectory: *, root: boolean, pattern: string, tag: boolean}}
  * @type {BaseConfig}
  */
 const baseConfig = {
-    pattern: '',        // 排除的文件
-    level: Infinity,    // 输出的层级
-    tag: false,         // 是否展示文件类型
-    targetDirectory: process.cwd()
+    targetDirectory: process.cwd(),     // 待查看目录
+    pattern: '',                        // 排除的文件
+    level: Infinity,                    // 输出的层级
+    tag: false,                         // 是否展示文件类型
+    output: null,                       // 结果输出地址
+    nature: false,                      // 是否为系统文件及文件夹的默认排序
+    root: false                         // 是否展示根目录
 };
 
 /**
@@ -134,5 +137,22 @@ export default function getFileTree(options = baseConfig) {
 
     let treeList = fileStructData.children;
 
-    return _traverseTree_(treeList, 0, '', options)
+    let res = _traverseTree_(treeList, 0, '', options);
+
+    if (options.root) {
+        let pathArr = targetDirectory.split('/');
+
+        const resArr = res.split('\n');
+        let maxLen = 0;
+
+        for (let i = 0; i < resArr.length; i++) {
+            maxLen = Math.max(maxLen, resArr[i]?.length)
+        }
+
+        let line = ''.padStart(maxLen + 20, '-');
+
+        res = (options.tag ? '[Root] ' : '') + pathArr[pathArr.length - 1] + '\n' + line + '\n' + res;
+    }
+
+    return res;
 }

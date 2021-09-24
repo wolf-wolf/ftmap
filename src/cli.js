@@ -6,20 +6,23 @@ import yargs from 'yargs';
 
 function parseArgumentsIntoOptions(rawArgs) {
     const argv = yargs.usage("Usage: $0 [options]")
-        .alias('O', 'output')
-        .describe('O', '内容输出地址，默认为控制台打印')
-
-        .alias('T', 'tag')
-        .describe('T', '是否展示文件类型')
+        .alias('I', 'pattern')
+        .describe('I', '需要排除的文件目录正则表达式（注意引号）\neg. "/node_modules|.git/"')
 
         .alias('L', 'level')
         .describe('L', '文件目录结构的展示层级')
 
+        .alias('T', 'tag')
+        .describe('T', '是否展示文件类型')
+
+        .alias('O', 'output')
+        .describe('O', '内容输出地址，默认为控制台打印')
+
         .alias('N', 'nature')
         .describe('N', '使用系统自然顺序，若不设置则默认显示为目录-文件的排序方式')
 
-        .alias('I', 'pattern')
-        .describe('I', '需要排除的文件目录正则表达式（注意引号）\neg. "/node_modules|.git/"')
+        .alias('R', 'root')
+        .describe('R', '是否显示根目录')
 
         .help('h')
         .alias('h', 'help')
@@ -27,11 +30,12 @@ function parseArgumentsIntoOptions(rawArgs) {
         .argv;
 
     return {
-        tag: argv['tag'] || false,
         pattern: argv['pattern'] || false,
         level: argv['level'] || false,
+        tag: argv['tag'] || false,
         output: argv['output'] || false,
         nature: argv['nature'] || false,
+        root: argv['root'] || false,
     };
 }
 
