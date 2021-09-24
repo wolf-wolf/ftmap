@@ -99,7 +99,7 @@ Usage: ftmap [options]
   -h, --help     显示帮助信息                                             [布尔]
 ```
 
-## [4、Document](#L1)<a name="L1"/>
+## 4、Document <a name="L1"/>
 
 `getFileTree(options)`
 
