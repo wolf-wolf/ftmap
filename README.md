@@ -2,7 +2,11 @@
 
 基于 [directory-tree](https://www.npmjs.com/package/directory-tree) ,生成文件目录的树形结构展示
 
-## install
+[1、install](#1、install)
+[4、Document](#4、Document)
+
+
+## 1、install
 
 ```shell
 npm install ftmap -g
@@ -94,7 +98,7 @@ Usage: ftmap [options]
   -h, --help     显示帮助信息                                             [布尔]
 ```
 
-## Document
+## 4、Document
 
 `getFileTree(options)`
 
