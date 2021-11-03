@@ -146,7 +146,7 @@ export default function getFileTree(options = baseConfig) {
         let maxLen = 0;
 
         for (let i = 0; i < resArr.length; i++) {
-            maxLen = Math.max(maxLen, resArr[i]?.length)
+            maxLen = Math.max(maxLen, resArr[i] ? resArr[i].length : 0)
         }
 
         let line = ''.padStart(maxLen + 20, '-');
